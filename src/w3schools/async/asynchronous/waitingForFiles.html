@@ -1,0 +1,34 @@
+<!-- If you create a function to load an external resource (like a script or a file), 
+    you cannot use the content before it is fully loaded. -->
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>JavaScript Callbacks</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        function myDisplayer(some) {
+            document.getElementById("demo").innerHTML = some;
+        }
+
+        // use Live Server to work
+        function getFile(myCallback) {
+            let req = new XMLHttpRequest();
+            req.open('GET', "mycar.html");
+            req.onload = function() {
+                if (req.status == 200) {
+                    myCallback(this.responseText);
+                } else {
+                    myCallback("Error: " + req.status);
+                }
+            }
+            req.send();
+        }
+
+        getFile(myDisplayer); 
+    </script>
+
+</body>
+</html>
