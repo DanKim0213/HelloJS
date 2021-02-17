@@ -45,4 +45,6 @@
 
 * await makes a function wait for a Promise
 
+* async with await function doesn't have return keyword while async itself function has return keyword
+
 [here](https://www.w3schools.com/js/js_async.asp)

@@ -1,0 +1,45 @@
+<!-- If you have more than one AJAX task in a website, 
+    you should create one function for executing the XMLHttpRequest object, 
+    and one callback function for each AJAX task. -->
+<!DOCTYPE html>
+<html>
+<body>
+
+    <div id="demo">
+
+    <h2>The XMLHttpRequest Object</h2>
+
+    <button type="button" onclick="loadDoc('ajax_info.txt', myFunction)">Change Content
+    </button>
+    </div>
+
+    <script>
+        // a function which contains one callback function for each AJAX task
+        // for executing the XMLHttpRequest
+        function loadDoc(url, cFunction) {  
+            var xhttp;
+            xhttp=new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    cFunction(this);
+                }
+            };
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+
+
+        // AJAX tasks 
+        function myFunction(xhttp) {
+            document.getElementById("demo").innerHTML =
+            xhttp.responseText;
+        }
+        function myFunction2(xhttp) {
+            // action goes here
+        }
+        function myFunction3(xhttp) {
+            // action goes here
+        }
+    </script>
+</body>
+</html>

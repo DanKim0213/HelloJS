@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>JavaScript async / await</h2>
+
+    <h1 id="demo"></h1>
+
+    <script>
+        function myDisplayer(some) {
+            document.getElementById("demo").innerHTML = some;
+        }
+
+        // async makes a function return a Promise 
+        async function myDisplay() {
+            // return "Hello, everybody!";
+
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#static_methods
+            return Promise.resolve("Hello, world!"); // one of static methods 
+        }
+
+        myDisplay().then(
+            function(value) { myDisplayer(value); },
+            function(error) { myDisplayer(error); }
+        );
+    </script>
+
+</body>
+</html>

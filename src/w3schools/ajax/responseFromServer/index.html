@@ -1,0 +1,32 @@
+<!-- The onreadystatechange function is called 
+    every time the readyState changes.
+
+    When readyState is 4 and status is 200, 
+    the response is ready -->
+<!DOCTYPE html>
+<html>
+<body>
+
+    <div id="demo">
+        <h2>The XMLHttpRequest Object</h2>
+        <button type="button" onclick="loadDoc()">Change Content</button>
+    </div>
+
+    <script>
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                // this.readyState == 4 means "reaquest finished and response is ready"
+                // this.status == 200 means "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML =
+                    this.responseText;
+                }
+            };
+            xhttp.open("GET", "ajax_info.txt", true);
+            xhttp.send();
+        }
+    </script>
+
+</body>
+</html>
