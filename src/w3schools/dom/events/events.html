@@ -1,0 +1,39 @@
+<!-- onclick, onload, onchage -->
+<!DOCTYPE html>
+<html>
+<body>
+    Enter your name: <input type="text" id="fname" onchange="myFunction()">
+
+    <!-- action added in HTML -->
+    <h1 onclick="changeText(this)">Click on this text!</h1>
+    <button onclick="displayDate()">The time is?</button>
+    <p id="demo"></p>
+
+    <!-- action added in Script-->
+    <button id="myBtn">Try it</button>
+    <p id="myBtnDemo"></p>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+        
+        function changeText(id) {
+            id.innerHTML = "Ooops!";
+        }
+
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        }
+
+        // action added in Script
+        document.getElementById("myBtn").onclick = displayDate2;
+        function displayDate2() {
+            document.getElementById("myBtnDemo").innerHTML = Date();
+        }
+    </script>
+
+    <p>Click the button to display the date.</p>
+</body>
+</html> 

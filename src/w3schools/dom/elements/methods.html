@@ -1,0 +1,17 @@
+<!-- getElementById is a method, while innerHTML is a property -->
+<html>
+<body>
+
+    <p class="title">HTML Element</p>
+    <p id="demo"></p>
+
+    <script>
+        // document.getElementById("demo").innerHTML = "Hello World!";
+        document.getElementsByClassName("title")[0].innerHTML = "Finding HTML Elements";
+        document.getElementsByTagName("p")[1].innerHTML = "Hi World!";
+        // document.querySelectorAll("p#demo")[0].innerHTML = "found";
+        // document.querySelectorAll("p.title")[0].innerHTML = "found";
+    </script>
+
+</body>
+</html> 
