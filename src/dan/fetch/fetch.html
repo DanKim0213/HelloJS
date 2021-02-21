@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Using fetch API</h1>
+    <p id="demo"></p>
+    <script>
+        // 1)
+        // fetch("https://api.cryptonator.com/api/ticker/btc-usd") 
+        //     .then(res => {
+        //         console.log(`RESPONSE, WAITING TO PARSE... ${res}`);
+        //         return res.json(); // **
+        //     })
+        //     .then(data => {
+        //         console.log(`DATA PARSED...`);
+        //         document.getElementById("demo").innerHTML = data.ticker.price;
+        //     })
+        //     .catch(e => {
+        //         document.getElementById("status").innerHTML = `OH NO! ERROR! ${e}`;
+        //     });
+    </script>
+
+    <script>
+        // 2)
+        const price = async () => {
+            const res = await fetch("https://api.cryptonator.com/api/ticker/btc-usd");
+            const data = await res.json();
+            document.getElementById("demo").innerHTML = data.ticker.price;
+        }
+
+        price();
+    </script>
+    
+</body>
+</html>

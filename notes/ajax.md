@@ -22,7 +22,7 @@
 
 * Access across domains is not allowed for security reasons.
 
-* Modern Browsers can use Fetch API instead of the XMLHttpRequest Object.
+* Modern Browsers can use **Fetch API** or **Axios** instead of the XMLHttpRequest Object.
 
 [here](https://www.w3schools.com/js/js_ajax_http.asp)
 

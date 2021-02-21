@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Using XHR </h1>
+    <p id="demo"></p>
+
+    <!-- <script>
+        let req = new XMLHttpRequest();
+        req.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.getResponseHeader("content-type"));
+                document.getElementById("joke").innerHTML = this.responseText;
+            }
+        };
+        req.open("GET", "https://icanhazdadjoke.com/", true); 
+        req.send();
+    </script> -->
+    <script>
+        let req = new XMLHttpRequest();
+        req.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                const data = JSON.parse(this.responseText);
+                console.log(data);
+                document.getElementById("demo").innerHTML = data.ticker.price;
+            }
+        }
+
+        req.open("GET", "https://api.cryptonator.com/api/ticker/btc-usd", true);
+        req.send();
+    </script>
+    
+</body>
+</html>
