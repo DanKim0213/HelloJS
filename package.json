@@ -1,0 +1,33 @@
+{
+  "name": "hellojs",
+  "version": "1.0.0",
+  "description": "Intro to JS",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/dan/express_intro/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanKim0213/HelloJS.git"
+  },
+  "keywords": [
+    "Introduction",
+    "HelloWorld"
+  ],
+  "author": "Dan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanKim0213/HelloJS/issues"
+  },
+  "homepage": "https://github.com/DanKim0213/HelloJS#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
