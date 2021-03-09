@@ -18,7 +18,15 @@ const getDogPic = async () => {
   }
 };
 
+// we call async function from another async function to set order
+
 // Don't Block the Event Loop: async-await required
-console.log('1: Will get Dog pictures');
-getDogPic();
-console.log('3: Done getting Dog pictures');
+// console.log('1: Will get Dog pictures');
+// getDogPic();
+// console.log('3: Done getting Dog pictures');
+
+(async () => {
+  console.log('1: Will get Dog pictures');
+  await getDogPic();
+  console.log('3: Done getting Dog pictures');
+})();
